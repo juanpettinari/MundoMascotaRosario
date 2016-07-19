@@ -13,16 +13,25 @@ namespace MundoMascotaRosario.Models
 
         [Key]
         public string TarjetaId { get; set; }
-
-        public string TipoDeTarjeta { get; set; }
-        public int NumeroTarjeta { get; set; }
+        public TipoTarjeta TipoDeTarjeta { get; set; }
+        public string NumeroTarjeta { get; set; }
         public MesExpiracion MesExpiracion { get; set; }
         public AnoExpiracion AnoExpiracion { get; set; }
-        public string Titular { get; set; }
+        public string NombreTitular { get; set; }
+        public string DniTitular { get; set; }
         public string CodigoSeguridad { get; set; }
         public EstadoTarjeta Estado { get; set; }
 
         public virtual ICollection<OrdenDeCompra> OrdenesDeCompra { get; set; }
+    }
+
+    public enum TipoTarjeta
+    {
+        Visa = 1,
+        Mastercard,
+        Amex,
+        Naranja,
+        Cabal
     }
 
     public enum EstadoTarjeta

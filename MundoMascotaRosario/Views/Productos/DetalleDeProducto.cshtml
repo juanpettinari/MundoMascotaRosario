@@ -1,0 +1,60 @@
+﻿@model MundoMascotaRosario.Models.Producto
+
+@{
+    ViewBag.Title = "Detalle de Producto";
+}
+
+<h2>Detalle</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        <h4>Producto</h4>
+        <hr />
+
+        <div class="row">
+            <h4 class="text-center">
+                @Html.DisplayFor(model => model.Animal) | @Html.DisplayFor(model => model.Marca)
+            </h4>
+        </div>
+
+        <div class="row">
+            <h2 class="text-center">
+                @Html.DisplayFor(model => model.Descripcion, new { @class = "lead" })
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-responsive center-block" src="@Url.Content(Model.Imagen)" alt="@Html.DisplayFor(model=>model.Descripcion)" />
+
+            </div>
+            <div class="col-md-6">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <h2 class="row">
+                    @Html.DisplayFor(model => model.PrecioDecimal)
+                </h2>
+
+                <div class="row">
+
+                </div>
+
+                <h3 class="row">
+                    Stock: @Html.DisplayFor(model => model.Stock)
+                </h3>
+                @Html.HiddenFor(model => model.ProductoId)
+                Cantidad: <input type="number" name="cantidad" min="1" max="@Html.DisplayFor(model => model.Stock)">
+
+                <input type="submit" value="Agregar al Carrito" class="btn btn-success" />
+
+            </div>
+
+        </div>
+    </div>
+}
+
+

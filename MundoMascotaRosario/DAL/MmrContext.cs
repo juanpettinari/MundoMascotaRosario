@@ -24,5 +24,6 @@ namespace MundoMascotaRosario.DAL
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
     }
 }

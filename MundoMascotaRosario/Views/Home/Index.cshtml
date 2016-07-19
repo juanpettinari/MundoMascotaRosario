@@ -1,31 +1,76 @@
-﻿@{
+﻿@model IEnumerable<MundoMascotaRosario.Models.Producto>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-responsive center-block" width="300" height="300" src="~/Content/Img/dog-computer.jpg" alt="Imagen de un perro usando notebook"/>
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <h4 class="text-success">Busca los mejores productos para tu mascota</h4>
+                            <h5 class="text-success">En cualquier momento, desde cualquier dispositivo</h5>
+                        </div>
+                        <div>
+                            <div class="col-xs-12">
+                                <div class="well">
+                                    <div id="busqueda" class="input-group">
+                                        @Html.TextBox("busqueda", null, new {@class = "form-control", style="display:inline", @placeholder = "Animal, Marca o Producto"})
+                                        <i class="input-group-btn">
+                                            <button type="submit" value="Buscar" class="btn btn-success">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </i>
+                                    </div>
+
+                                </div>
+                                <h5 class="text-info">Ejemplo: "Perro", "Eukanuba", "Correa"</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+        <div class="col-md-4">
+            <img class="img-responsive center-block" width="300" height="300" src="~/Content/Img/dog-computer2.jpg" alt="Imagen de un perro usando notebook" />
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    @foreach (var producto in Model)
+    {
+        <table class="col-md-3 table-bordered table-responsive">
+            <tr>
+                <td>
+                    <div class="center">
+                        <a href="../Productos/Details/@producto.ProductoId"><img class="img-responsive center-block" height="160" width="160" src="@Url.Content(producto.Imagen)" alt="@producto.Descripcion"></a>
+                    </div>
+                    <div class="text-center lead text">
+                        @Html.ActionLink(producto.Marca, "BuscarProductos", "Productos", new { busqueda = producto.Marca }, null)
+                    </div>
+                    <div class="center-block text-center">
+                        @Html.ActionLink(producto.Descripcion, "DetalleDeProducto", "Productos", new { id = producto.ProductoId }, null)
+                    </div>
+                    <div>
+                        <div class="col-md-6 text-center center lead">
+                            $ @producto.PrecioDecimal
+                        </div>
+                        @Html.ActionLink("Comprar", "DetalleDeProducto", "Productos",new { id=producto.ProductoId},new {@class="col-md-6 btn btn-success center-block"})
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+
+    }

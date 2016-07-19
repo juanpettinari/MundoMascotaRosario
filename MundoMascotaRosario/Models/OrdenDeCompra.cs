@@ -16,6 +16,7 @@ namespace MundoMascotaRosario.Models
 
         public string UsuarioId { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime FechaCompra { get; set; }
 
         public string DireccionDeEnvioId { get; set; }
@@ -24,6 +25,7 @@ namespace MundoMascotaRosario.Models
 
         public EstadoPago Estado { get; set; }
 
+        [DataType(DataType.Currency)]
         public decimal TotalDecimal { get; set; }
 
         public virtual Direccion Direccion { get; set; }

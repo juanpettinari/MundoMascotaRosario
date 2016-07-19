@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MundoMascotaRosario.Models.Producto>
+
+@{
+    ViewBag.Title = "ListadoProductos";
+}
+
+<h2>Listado de Productos</h2>
+
+
+<table class="table table-hover table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioDecimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imagen)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Animal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioDecimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Imagen)
+            </td>
+            <td>
+                @if (item.Stock > 0)
+                {
+                    @Html.ActionLink("Agregar al Carrito", "DetalleDeProducto", new {id = item.ProductoId})
+                }
+                else
+                {
+                    <label class="text-danger">No hay stock</label>
+                }
+
+            </td>
+        </tr>
+
+    }
+
+</table>

@@ -13,8 +13,10 @@ namespace MundoMascotaRosario.Models
         [Key]
         public string UsuarioId { get; set; }
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
         [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
         [Required]
         public string Nombre { get; set; }
@@ -28,8 +30,6 @@ namespace MundoMascotaRosario.Models
         public string NroDocumento { get; set; }
         [Required]
         public bool Estado { get; set; }
-
-        public virtual ICollection<Tarjeta> Tarjetas { get; set; }
 
         public virtual ICollection<OrdenDeCompra> OrdenesDeCompra { get; set; }
 

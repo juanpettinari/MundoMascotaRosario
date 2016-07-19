@@ -16,7 +16,14 @@ namespace MundoMascotaRosario.Models
 
         public string ProductoId { get; set; }
 
-        public decimal SubtotalDecimal { get; set; }
+        public decimal SubtotalDecimal
+        {
+            get
+            {
+                var subTotal = Cantidad*Producto.PrecioDecimal;
+                return subTotal;
+            }
+        }
 
         public virtual Producto Producto { get; set; }
     }
