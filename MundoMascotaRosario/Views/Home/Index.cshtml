@@ -56,7 +56,7 @@
                     <div class="center">
                         <a href="../Productos/Details/@producto.ProductoId"><img class="img-responsive center-block" height="160" width="160" src="@Url.Content(producto.Imagen)" alt="@producto.Descripcion"></a>
                     </div>
-                    <div class="text-center lead text">
+                    <div class="text-center text">
                         @Html.ActionLink(producto.Marca, "BuscarProductos", "Productos", new { busqueda = producto.Marca }, null)
                     </div>
                     <div class="center-block text-center">

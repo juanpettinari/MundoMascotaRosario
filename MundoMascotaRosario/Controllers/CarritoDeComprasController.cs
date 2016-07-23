@@ -1,5 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using MundoMascotaRosario.DAL;
+using MundoMascotaRosario.Models;
+using WebGrease.Css.Extensions;
 
 namespace MundoMascotaRosario.Controllers
 {
@@ -7,14 +10,26 @@ namespace MundoMascotaRosario.Controllers
     {
         private readonly MMRContext _db = new MMRContext();
 
-        public void AgregarAlCarrito(string producto)
+        public ActionResult VerCarrito()
         {
+            if (Session["carrito"] != null)
+            {
+                var carrito = Session["carrito"] as CarritoDeCompra;
 
+                return View(carrito);
+            }
+            else
+            {
+                ViewBag.img = Url.Content("~/Content/Img/shopping.jpg");
+                return View();
+            }
         }
 
 
-
-
+        public void LimpiarSesion()
+        {
+            Session["carrito"] = null;
+        }
 
 
         protected override void Dispose(bool disposing)
@@ -26,8 +41,5 @@ namespace MundoMascotaRosario.Controllers
             base.Dispose(disposing);
         }
 
-        public void AgregarProductoAlCarrito(int cantidad, string productoId)
-        {
-        }
     }
 }

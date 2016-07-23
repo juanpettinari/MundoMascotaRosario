@@ -22,7 +22,7 @@ namespace MundoMascotaRosario.Models
 
         [DataType(DataType.Currency)]
         public decimal PrecioDecimal { get; set; }
-
+        [DataType(DataType.ImageUrl)]
         public string Imagen { get; set; }
     }
 }

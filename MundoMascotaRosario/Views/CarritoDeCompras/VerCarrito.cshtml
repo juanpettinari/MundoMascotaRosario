@@ -1,0 +1,70 @@
+﻿@model MundoMascotaRosario.Models.CarritoDeCompra
+
+@{
+    ViewBag.Title = "VerCarrito";
+}
+
+<h2>VerCarrito</h2>
+
+<div>
+    <h4>CarritoDeCompra</h4>
+    <hr/>
+    @if (Model == null)
+    {
+        <h3 class="text-danger">El Carrito está vacio!</h3>
+        <img class="img-responsive" width="200" height="200" src=@Url.Content(ViewBag.img) alt="Perro con canasta vacía"/>
+        
+    }
+    else
+    {
+        <table class="table table-hover">
+            <tr>
+                <th>
+                    Imagen
+                </th>
+
+                <th>
+                    Producto
+                </th>
+
+                <th>
+                    Cantidad
+                </th>
+
+                <th>
+                    Precio Unitario
+                </th>
+                <th>
+                    Subtotal
+                </th>
+            </tr>
+            @foreach (var item in Model.LineasDeProducto)
+            {
+                <tr>
+                    <td>
+                        <img class="img-responsive center-block" width="100" src=@Url.Content(item.Producto.Imagen) alt=@item.Producto.Descripcion />
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelitem => item.Producto.Descripcion)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelitem => item.Cantidad)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelitem => item.Producto.PrecioDecimal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelitem => item.SubtotalDecimal)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        <h3 class="text-danger">Aca iria el Total</h3>
+    }
+
+</div>

@@ -25,5 +25,6 @@ namespace MundoMascotaRosario.DAL
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
+        public System.Data.Entity.DbSet<MundoMascotaRosario.Models.CarritoDeCompra> CarritoDeCompras { get; set; }
     }
 }

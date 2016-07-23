@@ -22,15 +22,18 @@ namespace MundoMascotaRosario.Controllers
         {
             return View(await _db.Productos.ToListAsync());
         }
-            
+
 
 
         public ActionResult BuscarProductos(string busqueda)
         {
-            var productos = _db.Productos.Where(p => p.Descripcion.Contains(busqueda) || p.Marca.Contains(busqueda) || p.Animal.Contains(busqueda));
+            var productos =
+                _db.Productos.Where(
+                    p => p.Descripcion.Contains(busqueda) || p.Marca.Contains(busqueda) || p.Animal.Contains(busqueda));
             return View("ListadoProductos", productos);
 
         }
+
         // GET: Productos
         public async Task<ActionResult> Index()
         {
@@ -53,17 +56,70 @@ namespace MundoMascotaRosario.Controllers
         }
 
         [HttpPost]
-        public ActionResult DetalleDeProducto(int cantidad, string productoId)
+        public async Task<ActionResult> DetalleDeProducto(string productoId, int cantidad)
         {
+            var producto = await _db.Productos.FindAsync(productoId);
 
-            CarritoDeComprasController.AgregarProductoAlCarrito(cantidad, productoId);
-            return View();
+            if (producto == null)
+                return View();
+            if (producto.Stock >= cantidad)
+                AgregarACarrito(producto, cantidad);
+            return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult LimpiarSesion()
+        {
+            Session["carrito"] = null;
+            return RedirectToAction("Index", "Home");
+        }
+
+        private void AgregarACarrito(Producto producto, int cantidad)
+        {
+            if (Session["carrito"] == null)
+            {
+                var carrito = new CarritoDeCompra();
+
+                var subtotal = producto.PrecioDecimal * cantidad;
+
+                var lineaDeProducto = new LineaDeProducto
+                {
+                    Cantidad = cantidad,
+                    Producto = producto,
+                    SubtotalDecimal = subtotal
+                };
+
+                carrito.LineasDeProducto = new List<LineaDeProducto> {lineaDeProducto};
+
+
+
+
+                Session["carrito"] = carrito;
+            }
+            else
+            {
+                var carrito = Session["carrito"] as CarritoDeCompra;
+
+                var subtotal = producto.PrecioDecimal * cantidad;
+
+                var lineaDeProducto = new LineaDeProducto
+                {
+                    SubtotalDecimal = subtotal,
+                    Cantidad = cantidad,
+                    Producto = producto
+                };
+                if (carrito == null) return;
+                carrito.LineasDeProducto.Add(lineaDeProducto);
+
+                Session["carrito"] = carrito;
+            }
+
+
+        }
         // GET: Productos/Create
         public ActionResult Create()
         {
             return View();
+
         }
 
         // POST: Productos/Create

@@ -52,3 +52,5 @@ C:\Users\Juan\Documents\GitHub\MundoMascotaRosario\MundoMascotaRosario\obj\Debug
 C:\Users\Juan\Documents\GitHub\MundoMascotaRosario\MundoMascotaRosario\obj\Debug\MundoMascotaRosario.Migrations.InitialCreate.resources
 C:\Users\Juan\Documents\GitHub\MundoMascotaRosario\MundoMascotaRosario\obj\Debug\MundoMascotaRosario.csproj.GenerateResource.Cache
 C:\Users\Juan\Documents\GitHub\MundoMascotaRosario\MundoMascotaRosario\obj\Debug\MundoMascotaRosario.Migrations.Initial.resources
+C:\Users\Juan\Documents\GitHub\MundoMascotaRosario\MundoMascotaRosario\obj\Debug\MundoMascotaRosario.Migrations.nullableSubtotal.resources
+C:\Users\Juan\Documents\GitHub\MundoMascotaRosario\MundoMascotaRosario\obj\Debug\MundoMascotaRosario.Migrations.CambioEnLineaDeProductos.resources

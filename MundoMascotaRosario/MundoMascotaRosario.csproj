@@ -144,6 +144,14 @@
     <Compile Include="Migrations\201607181854191_Initial.Designer.cs">
       <DependentUpon>201607181854191_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607191922527_nullableSubtotal.cs" />
+    <Compile Include="Migrations\201607191922527_nullableSubtotal.Designer.cs">
+      <DependentUpon>201607191922527_nullableSubtotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607192011312_CambioEnLineaDeProductos.cs" />
+    <Compile Include="Migrations\201607192011312_CambioEnLineaDeProductos.Designer.cs">
+      <DependentUpon>201607192011312_CambioEnLineaDeProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CarritoDeCompra.cs" />
     <Compile Include="Models\Direccion.cs" />
@@ -237,6 +245,7 @@
     <Content Include="Views\CarritoDeCompras\Details.cshtml" />
     <Content Include="Views\CarritoDeCompras\Edit.cshtml" />
     <Content Include="Views\CarritoDeCompras\Index.cshtml" />
+    <Content Include="Views\CarritoDeCompras\VerCarrito.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +260,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607181854191_Initial.resx">
       <DependentUpon>201607181854191_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607191922527_nullableSubtotal.resx">
+      <DependentUpon>201607191922527_nullableSubtotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607192011312_CambioEnLineaDeProductos.resx">
+      <DependentUpon>201607192011312_CambioEnLineaDeProductos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

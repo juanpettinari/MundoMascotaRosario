@@ -49,12 +49,13 @@
                 @Html.DisplayFor(modelItem => item.PrecioDecimal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Imagen)
+                <img class="img-responsive center-block" width="100" src=@Url.Content(item.Imagen) alt=@item.Descripcion />
             </td>
+
             <td>
                 @if (item.Stock > 0)
                 {
-                    @Html.ActionLink("Agregar al Carrito", "DetalleDeProducto", new {id = item.ProductoId})
+                    @Html.ActionLink("Comprar", "DetalleDeProducto", new {id = item.ProductoId}, new {@class="btn btn-success"})
                 }
                 else
                 {
