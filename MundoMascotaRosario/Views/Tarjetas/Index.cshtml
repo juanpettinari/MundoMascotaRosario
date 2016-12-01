@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MundoMascotaRosario.Models.Tarjeta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDeTarjeta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroTarjeta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MesExpiracion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnoExpiracion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreTitular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DniTitular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoSeguridad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDeTarjeta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroTarjeta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MesExpiracion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnoExpiracion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreTitular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DniTitular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoSeguridad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TarjetaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TarjetaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TarjetaId })
+        </td>
+    </tr>
+}
+
+</table>

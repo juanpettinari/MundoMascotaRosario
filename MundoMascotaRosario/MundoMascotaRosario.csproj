@@ -129,37 +129,89 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\Hash.cs" />
     <Compile Include="Controllers\CarritoDeComprasController.cs" />
+    <Compile Include="Controllers\CiudadesController.cs" />
+    <Compile Include="Controllers\DireccionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MenusController.cs" />
+    <Compile Include="Controllers\OrdenesDeCompraController.cs" />
+    <Compile Include="Controllers\PaginasController.cs" />
+    <Compile Include="Controllers\PerfilesController.cs" />
+    <Compile Include="Controllers\PermisosController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\ProvinciasController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\RolesMenusController.cs" />
+    <Compile Include="Controllers\TarjetasController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="DAL\MMRContext.cs" />
     <Compile Include="DAL\MMRInitializer.cs" />
+    <Compile Include="Filters\CustomAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607181207197_InitialCreate.cs" />
-    <Compile Include="Migrations\201607181207197_InitialCreate.Designer.cs">
-      <DependentUpon>201607181207197_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201611271129000_Inicial.cs" />
+    <Compile Include="Migrations\201611271129000_Inicial.Designer.cs">
+      <DependentUpon>201611271129000_Inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607181854191_Initial.cs" />
-    <Compile Include="Migrations\201607181854191_Initial.Designer.cs">
-      <DependentUpon>201607181854191_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201611282152206_menu_submenu.cs" />
+    <Compile Include="Migrations\201611282152206_menu_submenu.Designer.cs">
+      <DependentUpon>201611282152206_menu_submenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607191922527_nullableSubtotal.cs" />
-    <Compile Include="Migrations\201607191922527_nullableSubtotal.Designer.cs">
-      <DependentUpon>201607191922527_nullableSubtotal.cs</DependentUpon>
+    <Compile Include="Migrations\201611282302501_undo_menusubmenu.cs" />
+    <Compile Include="Migrations\201611282302501_undo_menusubmenu.Designer.cs">
+      <DependentUpon>201611282302501_undo_menusubmenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607192011312_CambioEnLineaDeProductos.cs" />
-    <Compile Include="Migrations\201607192011312_CambioEnLineaDeProductos.Designer.cs">
-      <DependentUpon>201607192011312_CambioEnLineaDeProductos.cs</DependentUpon>
+    <Compile Include="Migrations\201611290010453_menu2.0.cs" />
+    <Compile Include="Migrations\201611290010453_menu2.0.Designer.cs">
+      <DependentUpon>201611290010453_menu2.0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611290139266_menu3.0.cs" />
+    <Compile Include="Migrations\201611290139266_menu3.0.Designer.cs">
+      <DependentUpon>201611290139266_menu3.0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611290144060_menu4.0.cs" />
+    <Compile Include="Migrations\201611290144060_menu4.0.Designer.cs">
+      <DependentUpon>201611290144060_menu4.0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611290215376_unir_Rol_A_Usuario.cs" />
+    <Compile Include="Migrations\201611290215376_unir_Rol_A_Usuario.Designer.cs">
+      <DependentUpon>201611290215376_unir_Rol_A_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611290952174_correccionmenu.cs" />
+    <Compile Include="Migrations\201611290952174_correccionmenu.Designer.cs">
+      <DependentUpon>201611290952174_correccionmenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611291326022_rolmenu.cs" />
+    <Compile Include="Migrations\201611291326022_rolmenu.Designer.cs">
+      <DependentUpon>201611291326022_rolmenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611291808241_se_va_tipo_de_doc.cs" />
+    <Compile Include="Migrations\201611291808241_se_va_tipo_de_doc.Designer.cs">
+      <DependentUpon>201611291808241_se_va_tipo_de_doc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611291835328_nullableint.cs" />
+    <Compile Include="Migrations\201611291835328_nullableint.Designer.cs">
+      <DependentUpon>201611291835328_nullableint.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\Permiso.cs" />
     <Compile Include="Models\CarritoDeCompra.cs" />
     <Compile Include="Models\Direccion.cs" />
     <Compile Include="Models\LineaDeProducto.cs" />
     <Compile Include="Models\OrdenDeCompra.cs" />
+    <Compile Include="Models\Pagina.cs" />
+    <Compile Include="Models\Perfil.cs" />
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Rol.cs" />
+    <Compile Include="Models\RolMenu.cs" />
     <Compile Include="Models\Tarjeta.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\ViewModels\CuentaUsuarioVM.cs" />
+    <Compile Include="Models\ViewModels\PadreVM.cs" />
+    <Compile Include="Models\ViewModels\MenuVM.cs" />
+    <Compile Include="Models\ViewModels\RegistrationVM.cs" />
+    <Compile Include="Models\ViewModels\HijoVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +298,68 @@
     <Content Include="Views\CarritoDeCompras\Edit.cshtml" />
     <Content Include="Views\CarritoDeCompras\Index.cshtml" />
     <Content Include="Views\CarritoDeCompras\VerCarrito.cshtml" />
+    <Content Include="Views\Ciudades\Create.cshtml" />
+    <Content Include="Views\Ciudades\Delete.cshtml" />
+    <Content Include="Views\Ciudades\Details.cshtml" />
+    <Content Include="Views\Ciudades\Edit.cshtml" />
+    <Content Include="Views\Ciudades\Index.cshtml" />
+    <Content Include="Views\Direcciones\Create.cshtml" />
+    <Content Include="Views\Direcciones\Delete.cshtml" />
+    <Content Include="Views\Direcciones\Details.cshtml" />
+    <Content Include="Views\Direcciones\Edit.cshtml" />
+    <Content Include="Views\Direcciones\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Tarjetas\Create.cshtml" />
+    <Content Include="Views\Tarjetas\Delete.cshtml" />
+    <Content Include="Views\Tarjetas\Details.cshtml" />
+    <Content Include="Views\Tarjetas\Edit.cshtml" />
+    <Content Include="Views\Tarjetas\Index.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Usuarios\LogIn.cshtml" />
+    <Content Include="Views\Usuarios\Registration.cshtml" />
+    <Content Include="Views\OrdenesDeCompra\Create.cshtml" />
+    <Content Include="Views\OrdenesDeCompra\Delete.cshtml" />
+    <Content Include="Views\OrdenesDeCompra\Details.cshtml" />
+    <Content Include="Views\OrdenesDeCompra\Edit.cshtml" />
+    <Content Include="Views\OrdenesDeCompra\Index.cshtml" />
+    <Content Include="Views\Paginas\Create.cshtml" />
+    <Content Include="Views\Paginas\Delete.cshtml" />
+    <Content Include="Views\Paginas\Details.cshtml" />
+    <Content Include="Views\Paginas\Edit.cshtml" />
+    <Content Include="Views\Paginas\Index.cshtml" />
+    <Content Include="Views\Perfiles\Create.cshtml" />
+    <Content Include="Views\Perfiles\Delete.cshtml" />
+    <Content Include="Views\Perfiles\Details.cshtml" />
+    <Content Include="Views\Perfiles\Edit.cshtml" />
+    <Content Include="Views\Perfiles\Index.cshtml" />
+    <Content Include="Views\Permisos\Create.cshtml" />
+    <Content Include="Views\Permisos\Delete.cshtml" />
+    <Content Include="Views\Permisos\Details.cshtml" />
+    <Content Include="Views\Permisos\Edit.cshtml" />
+    <Content Include="Views\Permisos\Index.cshtml" />
+    <Content Include="Views\Provincias\Create.cshtml" />
+    <Content Include="Views\Provincias\Delete.cshtml" />
+    <Content Include="Views\Provincias\Details.cshtml" />
+    <Content Include="Views\Provincias\Edit.cshtml" />
+    <Content Include="Views\Provincias\Index.cshtml" />
+    <Content Include="Views\Menus\Index.cshtml" />
+    <Content Include="Views\RolesMenus\Create.cshtml" />
+    <Content Include="Views\RolesMenus\Delete.cshtml" />
+    <Content Include="Views\RolesMenus\Details.cshtml" />
+    <Content Include="Views\RolesMenus\Edit.cshtml" />
+    <Content Include="Views\RolesMenus\Index.cshtml" />
+    <Content Include="Views\Menus\Create.cshtml" />
+    <Content Include="Views\Menus\Delete.cshtml" />
+    <Content Include="Views\Menus\Details.cshtml" />
+    <Content Include="Views\Menus\Edit.cshtml" />
+    <Content Include="Views\Perfiles\Unauthorized.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -255,17 +369,38 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607181207197_InitialCreate.resx">
-      <DependentUpon>201607181207197_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611271129000_Inicial.resx">
+      <DependentUpon>201611271129000_Inicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607181854191_Initial.resx">
-      <DependentUpon>201607181854191_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611282152206_menu_submenu.resx">
+      <DependentUpon>201611282152206_menu_submenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607191922527_nullableSubtotal.resx">
-      <DependentUpon>201607191922527_nullableSubtotal.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611282302501_undo_menusubmenu.resx">
+      <DependentUpon>201611282302501_undo_menusubmenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607192011312_CambioEnLineaDeProductos.resx">
-      <DependentUpon>201607192011312_CambioEnLineaDeProductos.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611290010453_menu2.0.resx">
+      <DependentUpon>201611290010453_menu2.0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611290139266_menu3.0.resx">
+      <DependentUpon>201611290139266_menu3.0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611290144060_menu4.0.resx">
+      <DependentUpon>201611290144060_menu4.0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611290215376_unir_Rol_A_Usuario.resx">
+      <DependentUpon>201611290215376_unir_Rol_A_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611290952174_correccionmenu.resx">
+      <DependentUpon>201611290952174_correccionmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611291326022_rolmenu.resx">
+      <DependentUpon>201611291326022_rolmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611291808241_se_va_tipo_de_doc.resx">
+      <DependentUpon>201611291808241_se_va_tipo_de_doc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611291835328_nullableint.resx">
+      <DependentUpon>201611291835328_nullableint.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

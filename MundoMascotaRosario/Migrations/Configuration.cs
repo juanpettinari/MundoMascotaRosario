@@ -2,11 +2,8 @@ namespace MundoMascotaRosario.Migrations
 {
     using Common;
     using Models;
-    using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<DAL.MMRContext>
     {
@@ -18,6 +15,9 @@ namespace MundoMascotaRosario.Migrations
 
         protected override void Seed(DAL.MMRContext context)
         {
+            context.Database.ExecuteSqlCommand("sp_MSForEachTable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL'");
+            context.Database.ExecuteSqlCommand("sp_MSForEachTable 'IF OBJECT_ID(''?'') NOT IN (ISNULL(OBJECT_ID(''[dbo].[__MigrationHistory]''),0)) DELETE FROM ?'");
+            context.Database.ExecuteSqlCommand("EXEC sp_MSForEachTable 'ALTER TABLE ? CHECK CONSTRAINT ALL'");
 
             var provincias = new List<Provincia>
             {
@@ -48,6 +48,7 @@ namespace MundoMascotaRosario.Migrations
             };
             provincias.ForEach(p => context.Provincias.Add(p));
 
+            context.SaveChanges();
             var provinciaId = provincias[0].ProvinciaId;
             var ciudades = new List<Ciudad>
             {
@@ -1200,6 +1201,50 @@ namespace MundoMascotaRosario.Migrations
                 },
             };
             productos.ForEach(p => context.Productos.Add(p));
+
+            var rol = new Rol
+            {
+                Descripcion = "Administrador",
+            };
+            var rol2 = new Rol
+            {
+                Descripcion = "Cliente",
+            };
+
+            context.Roles.Add(rol);
+            context.Roles.Add(rol2);
+
+            var usuario = new Usuario
+            {
+                Email = "admin@admin.com",
+                Password = Hash.CreateHash("admin"),
+                Nombre = "Juan",
+                Apellido = "Pettinari",
+                Estado = true,
+                Telefono = "124124124",
+                NroDocumento = "34648645",
+                Rol = rol
+            };
+
+            context.Usuarios.Add(usuario);
+
+            var usuario2 = new Usuario
+            {
+                Email = "juan@cliente.com",
+                Password = Hash.CreateHash("cliente"),
+                Nombre = "Ignacio",
+                Apellido = "Becerra",
+                Estado = true,
+                Telefono = "1522515251",
+                NroDocumento = "346346",
+                Rol = rol2
+            };
+
+            context.Usuarios.Add(usuario);
+            context.Usuarios.Add(usuario2);
+
+
+
 
             context.SaveChanges();
         }

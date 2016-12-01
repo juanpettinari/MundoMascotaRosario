@@ -1,0 +1,34 @@
+﻿@model MundoMascotaRosario.Models.Ciudad
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ciudad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Provincia.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Provincia.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CiudadId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

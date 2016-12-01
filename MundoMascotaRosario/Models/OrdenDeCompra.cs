@@ -6,20 +6,15 @@ namespace MundoMascotaRosario.Models
 {
     public class OrdenDeCompra
     {
-        public OrdenDeCompra()
-        {
-            OrdenId = Guid.NewGuid().ToString();
-        }
-
         [Key]
-        public string OrdenId { get; set; }
+        public int OrdenId { get; set; }
 
-        public string UsuarioId { get; set; }
+        public int UsuarioId { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime FechaCompra { get; set; }
 
-        public string DireccionDeEnvioId { get; set; }
+        public int DireccionDeEnvioId { get; set; }
 
         public FormaDePago FormaDePago { get; set; }
 

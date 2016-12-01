@@ -1,0 +1,66 @@
+﻿@model MundoMascotaRosario.Models.OrdenDeCompra
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrdenDeCompra</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCompra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCompra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionDeEnvioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DireccionDeEnvioId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormaDePago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormaDePago)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalDecimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalDecimal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrdenId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,88 @@
+﻿@model MundoMascotaRosario.Models.Tarjeta
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Tarjeta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDeTarjeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDeTarjeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroTarjeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroTarjeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MesExpiracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MesExpiracion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnoExpiracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnoExpiracion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreTitular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreTitular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DniTitular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DniTitular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoSeguridad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoSeguridad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

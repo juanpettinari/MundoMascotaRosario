@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MundoMascotaRosario.Models
 {
     public class Usuario
     {
-        public Usuario()
-        {
-            UsuarioId = Guid.NewGuid().ToString();
-        }
         [Key]
-        public string UsuarioId { get; set; }
+        public int UsuarioId { get; set; }
         [Required]
         [EmailAddress]
         public string Email { get; set; }
@@ -23,23 +18,18 @@ namespace MundoMascotaRosario.Models
         [Required]
         public string Apellido { get; set; }
         [Required]
+        [DataType(DataType.PhoneNumber)]
         public string Telefono { get; set; }
-        [Required]
-        public TipoDeDocumento TipoDeDocumento { get; set; }
         [Required]
         public string NroDocumento { get; set; }
         [Required]
         public bool Estado { get; set; }
+        [Required]
+        public int RolId { get; set; }
+
+        public Rol Rol { get; set; }
 
         public virtual ICollection<OrdenDeCompra> OrdenesDeCompra { get; set; }
 
-    }
-
-    public enum TipoDeDocumento
-    {
-       Dni = 1,
-       Le = 2,
-       Lc = 3,
-       Ce = 4
     }
 }

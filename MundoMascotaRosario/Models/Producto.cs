@@ -1,16 +1,11 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace MundoMascotaRosario.Models
 {
     public class Producto
     {
-        public Producto()
-        {
-            ProductoId = Guid.NewGuid().ToString();
-        }
         [Key]
-        public string ProductoId { get; set; }
+        public int ProductoId { get; set; }
 
         public string Animal { get; set; }
 

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using MundoMascotaRosario.DAL;
 using MundoMascotaRosario.Models;
-using WebGrease.Css.Extensions;
 
 namespace MundoMascotaRosario.Controllers
 {
@@ -18,11 +16,8 @@ namespace MundoMascotaRosario.Controllers
 
                 return View(carrito);
             }
-            else
-            {
-                ViewBag.img = Url.Content("~/Content/Img/shopping.jpg");
-                return View();
-            }
+            ViewBag.img = Url.Content("~/Content/Img/shopping.jpg");
+            return View();
         }
 
 

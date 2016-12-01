@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MundoMascotaRosario.Models
 {
     public class Tarjeta
     {
-        public Tarjeta()
-        {
-            TarjetaId = Guid.NewGuid().ToString();
-        }
-
         [Key]
-        public string TarjetaId { get; set; }
+        public int TarjetaId { get; set; }
         public TipoTarjeta TipoDeTarjeta { get; set; }
         public string NumeroTarjeta { get; set; }
         public MesExpiracion MesExpiracion { get; set; }

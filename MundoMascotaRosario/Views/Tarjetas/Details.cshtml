@@ -1,0 +1,82 @@
+﻿@model MundoMascotaRosario.Models.Tarjeta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tarjeta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDeTarjeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDeTarjeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroTarjeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroTarjeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MesExpiracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MesExpiracion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnoExpiracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnoExpiracion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreTitular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreTitular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DniTitular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DniTitular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoSeguridad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoSeguridad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TarjetaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

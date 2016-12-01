@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using MundoMascotaRosario.DAL;
 using MundoMascotaRosario.Models;
@@ -41,9 +38,9 @@ namespace MundoMascotaRosario.Controllers
         }
 
         // GET: Productos/Details/5
-        public async Task<ActionResult> DetalleDeProducto(string id)
+        public async Task<ActionResult> DetalleDeProducto(int id)
         {
-            if (id == null)
+            if (id == 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -56,7 +53,7 @@ namespace MundoMascotaRosario.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> DetalleDeProducto(string productoId, int cantidad)
+        public async Task<ActionResult> DetalleDeProducto(int productoId, int cantidad)
         {
             var producto = await _db.Productos.FindAsync(productoId);
 
@@ -138,9 +135,9 @@ namespace MundoMascotaRosario.Controllers
         }
 
         // GET: Productos/Edit/5
-        public async Task<ActionResult> Edit(string id)
+        public async Task<ActionResult> Edit(int id)
         {
-            if (id == null)
+            if (id == 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -184,7 +181,7 @@ namespace MundoMascotaRosario.Controllers
         // POST: Productos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(string id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             var producto = await _db.Productos.FindAsync(id);
             _db.Productos.Remove(producto);
